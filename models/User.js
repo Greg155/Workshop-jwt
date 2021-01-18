@@ -4,19 +4,19 @@
   /!\ WARNING /!\
 */
 
-const users = [{ id: 1, email: 'john.smith@example.com', password: null }];
+const users = [{ id: 1, email: "john.smith@example.com", password: null }];
 let id = 2;
 
 class User {
   static async create(user) {
-    const newUser = { id, ...user }
+    const newUser = { id, ...user };
     users.push(newUser);
     id++;
     return newUser;
   }
 
   static async findOne({ email }) {
-    return users.find(user => user.email === email);
+    return users.find((user) => user.email === email);
   }
 
   static async findAll() {
